@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nestcare | Vastgoedbeheer & Expat Verhuur</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --dark-blue: #0a192f;
+            --gold: #c5a059;
+            --light-bg: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--dark-blue);
+            background-color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* --- Navigatie --- */
+        nav {
+            padding: 20px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--dark-blue);
+        }
+
+        .logo span { color: var(--gold); }
+
+        /* --- Hero Sectie --- */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
+                        url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s forwards;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin-bottom: 30px;
+            opacity: 0;
+            animation: fadeInUp 1s 0.3s forwards;
+        }
+
+        /* --- Knoppen --- */
+        .btn {
+            padding: 15px 35px;
+            background-color: var(--gold);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s all;
+            border: 2px solid var(--gold);
+        }
+
+        .btn:hover {
+            background-color: transparent;
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        /* --- Services Sectie --- */
+        .services {
+            padding: 100px 10%;
+            background-color: var(--light-bg);
+            text-align: center;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: 0.4s;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        .card.reveal {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .card i {
+            font-size: 3rem;
+            color: var(--gold);
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--dark-blue);
+            color: white;
+            padding: 50px 10%;
+            text-align: center;
+        }
+
+        /* --- Animaties --- */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">NEST<span>CARE</span></div>
+        <div>
+            <a href="mailto:info@nestcare.nl" style="text-decoration: none; color: var(--dark-blue); font-weight: bold;">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Zorgeloos Vastgoedbeheer</h1>
+        <p>Nestcare ontzorgt eigenaren en helpt expats bij het vinden van hun ideale thuis in Nederland. Professioneel, persoonlijk en betrouwbaar.</p>
+        <a href="#diensten" class="btn">Onze Diensten</a>
+    </section>
+
+    <section id="diensten" class="services">
+        <h2 style="font-family: 'Playfair Display', serif; font-size: 2.5rem;">Wat we doen voor u</h2>
+        <div class="grid">
+            <div class="card js-reveal">
+                <i class="fas fa-key"></i>
+                <h3>Expat Verhuur</h3>
+                <p>Wij vinden de beste huurders voor uw woning met onze gespecialiseerde expat-netwerken.</p>
+            </div>
+            <div class="card js-reveal">
+                <i class="fas fa-home"></i>
+                <h3>Vastgoedbeheer</h3>
+                <p>Volledig technisch en financieel beheer van uw vastgoedportefeuille zonder zorgen.</p>
+            </div>
+            <div class="card js-reveal">
+                <i class="fas fa-handshake"></i>
+                <h3>No Cure No Pay</h3>
+                <p>Wij zijn pas tevreden als er een succesvolle match is gemaakt. Eerlijk en transparant.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Nestcare (LEI B.V.) | Gevestigd in De Meern</p>
+        <p style="font-size: 0.8rem; margin-top: 10px; color: #888;">Eigendom van Xiaolei Luo</p>
+    </footer>
+
+    <script>
+        // Scroll animatie script
+        const observerOptions = {
+            threshold: 0.2
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('reveal');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.js-reveal').forEach((el) => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
